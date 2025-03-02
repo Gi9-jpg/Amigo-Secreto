@@ -1,5 +1,6 @@
 let listaAmigos = [];
 let lista ="";
+let resultado="";
 
 function agregarAmigo(){
     let nombre = document.getElementById('amigo').value;
@@ -14,8 +15,8 @@ function agregarAmigo(){
 }
 
 function actualizarLista(){ 
-    let lista = `<li>${listaAmigos[listaAmigos.length - 1]}</li>`; // Solo el último elemento
-    document.getElementById("listaAmigos").innerHTML += lista; // Agregar solo el nuevo elemento
+    let lista = `<li>${listaAmigos[listaAmigos.length - 1]}</li>`; 
+    document.getElementById("listaAmigos").innerHTML += lista;
     console.log(listaAmigos);
 }
 
@@ -26,10 +27,8 @@ function limpiarCaja(){
 function sortearAmigo(){
     if(listaAmigos.length >=1){
         let indiceArreglo =  Math.floor(Math.random()*listaAmigos.length);
-
-        console.log(indiceArreglo);
-        console.log(listaAmigos =[indiceArreglo]);
-        console.log(listaAmigos.length);
+        let resultado = `<li> El amigo secreto sorteado es: ${listaAmigos[indiceArreglo]}.</li>`;
+        document.getElementById("resultado").innerHTML = resultado;
     }else{
         alert("Por favor, inserte un nombre.");
         console.log(listaAmigos.length);
