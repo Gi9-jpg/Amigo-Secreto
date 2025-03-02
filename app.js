@@ -24,7 +24,12 @@ function limpiarCaja(){
     document.getElementById('amigo').value = '';
 }
 
+function limpiarAmigos(){
+    document.getElementById('listaAmigos').innerHTML = '';
+}
+
 function sortearAmigo(){
+    limpiarAmigos();
     if(listaAmigos.length >=1){
         let indiceArreglo =  Math.floor(Math.random()*listaAmigos.length);
         let resultado = `<li> El amigo secreto sorteado es: ${listaAmigos[indiceArreglo]}.</li>`;
@@ -34,23 +39,3 @@ function sortearAmigo(){
         console.log(listaAmigos.length);
     }
 }
-
-/*function generarNumeroSecreto() {
-    let numeroGenerado =  Math.floor(Math.random()*numeroMaximo)+1;
-
-    console.log(numeroGenerado);
-    
-    //Si ya sorteamos todos los números
-    if (listaNumerosSorteados.length == numeroMaximo) {
-        asignarTextoElemento('p','Ya se sortearon todos los números posibles');
-    } else {
-        //Si el numero generado está incluido en la lista 
-        if (listaNumerosSorteados.includes(numeroGenerado)) {
-            return generarNumeroSecreto();
-        } else {
-            listaNumerosSorteados.push(numeroGenerado);
-            return numeroGenerado;
-        }
-    }
-    console.log(listaNumerosSorteados);
-}*/
